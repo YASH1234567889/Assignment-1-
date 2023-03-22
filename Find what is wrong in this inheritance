@@ -1,0 +1,34 @@
+class Animal {
+  void eat() {
+    System.out.println("eating...");
+  }
+}
+
+class Dog extends Animal {
+  void bark() {
+    System.out.println("barking...");
+  }
+}
+
+class BabyDog extends Dog {
+  void weep() {
+    System.out.println("weeping...");
+  }
+}
+
+class TestInheritance2 {
+  public static void main(String args[]) {
+    BabyDog d = new BabyDog();
+    Animal a = new Animal();
+    d.weep();
+    d.bark();
+    d.eat();
+  }
+}
+
+There are a few issues with this inheritance hierarchy:
+
+1.Animal class does not have a bark() or weep() method, so lines 15 and 16 will produce a compilation error.
+2.Animal class cannot be used to instantiate Dog or 'BabyDog' objects, so line 12 is correct but line 13 should be removed.
+3.'a' is an Animal object, so it does not have access to Dog or 'BabyDog' methods, so lines 15 and 16 should be removed.
+4.'BabyDog' inherits 'bark()' method from Dog, which can be called using 'BabyDog' objects, but Animal does not have access to it, so line 18 should be corrected to 'd.bark()'.

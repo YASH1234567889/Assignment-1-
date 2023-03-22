@@ -1,0 +1,47 @@
+class Animal {
+
+  void eat() {
+
+    System.out.println("eating...");
+
+  }
+
+}
+
+class Dog extends Animal {
+
+  void bark() {
+
+    System.out.println("barking...");
+
+  }
+
+}
+
+class BabyDog extends Dog {
+
+  void weep() {
+
+    System.out.println("weeping...");
+
+  }
+
+}
+
+class TestInheritance2 {
+
+  public static void main(String args[]) {
+
+    BabyDog d = new BabyDog();
+
+    d.weep();
+
+    d.bark();
+
+    d.eat();
+
+  }
+
+}
+
+The code has an error in the class definition of Dog. To implement an interface in Java, the class should use the implements keyword, not the extends keyword. Additionally, since Animal is a class, it cannot be implemented but should be extended instead. Therefore, the corrected code would be
